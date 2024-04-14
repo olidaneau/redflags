@@ -1,24 +1,14 @@
-import * as React from 'react'
+import * as React from "react";
 
-import {ChakraProvider} from '@chakra-ui/react'
-import Landing from "./routes/Landing.tsx";
-import ErrorPage from "./error-page.tsx";
-import {createBrowserRouter, RouterProvider,} from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import router from "./Router.tsx";
 
 function App() {
-    const router = createBrowserRouter([
-        {
-            path: "/",
-            element: <Landing/>,
-            errorElement: <ErrorPage/>,
-        },
-    ])
-
-    return (
-        <ChakraProvider>
-            <RouterProvider router={router}/>
-        </ChakraProvider>
-    )
+  return (
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+  );
 }
 
-export default App
+export default App;

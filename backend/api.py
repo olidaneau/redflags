@@ -1,23 +1,7 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import APIRouter
 
-app = FastAPI()
+from routers import upload
 
-# REACT PORT
-origins = [
-    "http://localhost:5173",
-    "localhost:5173"
-]
+api_router = APIRouter()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"]
-)
-
-
-@app.get("/", tags=["root"])
-async def read_root() -> dict:
-    return {"message": "Welcome to your todo list."}
+api_router.include_router(upload.router)

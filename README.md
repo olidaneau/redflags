@@ -26,10 +26,8 @@ Download GCP Service Account keys as JSON and save the file in the `credentials`
 
 Start the components by running the following command
 ```
-docker compose up
+docker-compose up --build --force-recreate
 ```
-
-Optionally add the `--build` and `--force-recreate` flags.
 
 Then browse to the following URLs :
 * For the frontend: http://localhost:5173/

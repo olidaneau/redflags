@@ -1,6 +1,5 @@
-from google.cloud import storage
-
 from config import settings
+from google.cloud import storage
 
 gcs_bucket_name = settings.GCS_BUCKET_NAME
 

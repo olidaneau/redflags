@@ -1,12 +1,11 @@
+from api import api_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
-from api import api_router
 
 app = FastAPI()
 
 # REACT PORT
-origins = ["http://localhost:5173", "localhost:5173"]
+origins = ["http://localhost:5173", "localhost:5173", "0.0.0.0:5173", "127.0.0.1:5173"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,11 +16,6 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
-
-
-@app.get("/", tags=["root"])
-async def read_root() -> dict:
-    return {"message": "Welcome to your todo list."}
 
 
 if __name__ == "__main__":

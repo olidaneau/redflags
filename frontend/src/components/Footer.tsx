@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import Logo from "./Logo";
 
-export default function Footer(props) {
+export default function Footer() {
   return (
     <Flex
       as="nav"

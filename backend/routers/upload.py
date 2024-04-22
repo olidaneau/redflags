@@ -3,9 +3,9 @@ import uuid
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, status
 from fastapi.responses import JSONResponse
 
+from config import settings
 from dependencies import gcs_client
 from services.gcp.gcs import upload_blob
-from config import settings
 
 router = APIRouter(
     prefix="/upload",
